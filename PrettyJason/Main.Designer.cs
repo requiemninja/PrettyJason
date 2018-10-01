@@ -31,6 +31,8 @@
             this.uglyTextBox = new System.Windows.Forms.TextBox();
             this.prettyButton = new System.Windows.Forms.Button();
             this.prettyTextBox = new EasyScintilla.SimpleEditor();
+            this.openJsonButton = new System.Windows.Forms.Button();
+            this.openJson = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // uglyTextBox
@@ -63,11 +65,22 @@
             this.prettyTextBox.Styler = null;
             this.prettyTextBox.TabIndex = 3;
             // 
+            // openJsonButton
+            // 
+            this.openJsonButton.Location = new System.Drawing.Point(240, 483);
+            this.openJsonButton.Name = "openJsonButton";
+            this.openJsonButton.Size = new System.Drawing.Size(75, 23);
+            this.openJsonButton.TabIndex = 4;
+            this.openJsonButton.Text = "Open";
+            this.openJsonButton.UseVisualStyleBackColor = true;
+            this.openJsonButton.Click += new System.EventHandler(this.openJson_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 513);
+            this.Controls.Add(this.openJsonButton);
             this.Controls.Add(this.prettyTextBox);
             this.Controls.Add(this.prettyButton);
             this.Controls.Add(this.uglyTextBox);
@@ -83,6 +96,8 @@
         private System.Windows.Forms.TextBox uglyTextBox;
         private System.Windows.Forms.Button prettyButton;
         private EasyScintilla.SimpleEditor prettyTextBox;
+        private System.Windows.Forms.Button openJsonButton;
+        private System.Windows.Forms.OpenFileDialog openJson;
     }
 }
 
