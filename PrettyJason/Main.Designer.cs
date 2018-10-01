@@ -36,6 +36,7 @@
             // uglyTextBox
             // 
             this.uglyTextBox.Location = new System.Drawing.Point(12, 12);
+            this.uglyTextBox.MaxLength = 65535;
             this.uglyTextBox.Multiline = true;
             this.uglyTextBox.Name = "uglyTextBox";
             this.uglyTextBox.Size = new System.Drawing.Size(709, 59);
@@ -44,8 +45,10 @@
             // prettyTextBox
             // 
             this.prettyTextBox.Location = new System.Drawing.Point(12, 77);
+            this.prettyTextBox.MaxLength = 65535;
             this.prettyTextBox.Multiline = true;
             this.prettyTextBox.Name = "prettyTextBox";
+            this.prettyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.prettyTextBox.Size = new System.Drawing.Size(709, 400);
             this.prettyTextBox.TabIndex = 1;
             // 
