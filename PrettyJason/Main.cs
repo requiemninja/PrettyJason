@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using EasyScintilla.Stylers;
 
 namespace PrettyJason
 {
@@ -24,6 +25,7 @@ namespace PrettyJason
             JToken uglyStuff = JToken.Parse(uglyTextBox.Text);
             string prettified = uglyStuff.ToString(Newtonsoft.Json.Formatting.Indented);
             prettyTextBox.Text = prettified;
+            this.prettyTextBox.Styler = new JsonStyler();
         }
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.uglyTextBox = new System.Windows.Forms.TextBox();
-            this.prettyTextBox = new System.Windows.Forms.TextBox();
             this.prettyButton = new System.Windows.Forms.Button();
+            this.prettyTextBox = new EasyScintilla.SimpleEditor();
             this.SuspendLayout();
             // 
             // uglyTextBox
@@ -42,16 +42,6 @@
             this.uglyTextBox.Size = new System.Drawing.Size(709, 59);
             this.uglyTextBox.TabIndex = 0;
             // 
-            // prettyTextBox
-            // 
-            this.prettyTextBox.Location = new System.Drawing.Point(12, 77);
-            this.prettyTextBox.MaxLength = 65535;
-            this.prettyTextBox.Multiline = true;
-            this.prettyTextBox.Name = "prettyTextBox";
-            this.prettyTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.prettyTextBox.Size = new System.Drawing.Size(709, 400);
-            this.prettyTextBox.TabIndex = 1;
-            // 
             // prettyButton
             // 
             this.prettyButton.Location = new System.Drawing.Point(321, 483);
@@ -62,13 +52,24 @@
             this.prettyButton.UseVisualStyleBackColor = true;
             this.prettyButton.Click += new System.EventHandler(this.prettyButton_Click);
             // 
+            // prettyTextBox
+            // 
+            this.prettyTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prettyTextBox.HScrollBar = false;
+            this.prettyTextBox.Lexer = ScintillaNET.Lexer.Json;
+            this.prettyTextBox.Location = new System.Drawing.Point(12, 77);
+            this.prettyTextBox.Name = "prettyTextBox";
+            this.prettyTextBox.Size = new System.Drawing.Size(709, 400);
+            this.prettyTextBox.Styler = null;
+            this.prettyTextBox.TabIndex = 3;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 513);
-            this.Controls.Add(this.prettyButton);
             this.Controls.Add(this.prettyTextBox);
+            this.Controls.Add(this.prettyButton);
             this.Controls.Add(this.uglyTextBox);
             this.Name = "Main";
             this.Text = "Json Prettifier";
@@ -80,8 +81,8 @@
         #endregion
 
         private System.Windows.Forms.TextBox uglyTextBox;
-        private System.Windows.Forms.TextBox prettyTextBox;
         private System.Windows.Forms.Button prettyButton;
+        private EasyScintilla.SimpleEditor prettyTextBox;
     }
 }
 
