@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using EasyScintilla.Stylers;
 
@@ -45,6 +37,19 @@ namespace PrettyJason
 
                 }
             }
+        }
+
+        private void saveJson_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveJson = new SaveFileDialog();
+            saveJson.Title = "Save prettified json file";
+            saveJson.Filter = "Json Files|*.json";
+            saveJson.DefaultExt = "json";
+            if (saveJson.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveJson.FileName, prettyTextBox.Text);
+            }
+            
         }
     }
 }

@@ -33,6 +33,7 @@
             this.prettyTextBox = new EasyScintilla.SimpleEditor();
             this.openJsonButton = new System.Windows.Forms.Button();
             this.openJson = new System.Windows.Forms.OpenFileDialog();
+            this.saveJsonButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uglyTextBox
@@ -75,11 +76,22 @@
             this.openJsonButton.UseVisualStyleBackColor = true;
             this.openJsonButton.Click += new System.EventHandler(this.openJson_Click);
             // 
+            // saveJsonButton
+            // 
+            this.saveJsonButton.Location = new System.Drawing.Point(402, 483);
+            this.saveJsonButton.Name = "saveJsonButton";
+            this.saveJsonButton.Size = new System.Drawing.Size(75, 23);
+            this.saveJsonButton.TabIndex = 5;
+            this.saveJsonButton.Text = "Save";
+            this.saveJsonButton.UseVisualStyleBackColor = true;
+            this.saveJsonButton.Click += new System.EventHandler(this.saveJson_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(733, 513);
+            this.Controls.Add(this.saveJsonButton);
             this.Controls.Add(this.openJsonButton);
             this.Controls.Add(this.prettyTextBox);
             this.Controls.Add(this.prettyButton);
@@ -98,6 +110,7 @@
         private EasyScintilla.SimpleEditor prettyTextBox;
         private System.Windows.Forms.Button openJsonButton;
         private System.Windows.Forms.OpenFileDialog openJson;
+        private System.Windows.Forms.Button saveJsonButton;
     }
 }
 
